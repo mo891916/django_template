@@ -16,13 +16,6 @@ class UserProfile(AbstractUser):
     mobile = models.CharField(max_length=11, verbose_name='手机号', null=True, blank=True)
     permission = IntegerRangeField(min_value=0, max_value=10, null=True, verbose_name='权限0-10', default=0)
     right_client = models.CharField(max_length=26, default='', null=True, blank=True, verbose_name='顾客列表查看权限')
-    right_sale = models.CharField(max_length=26, default='', null=True, blank=True, verbose_name='销售列表查看权限')
-    right_note = models.CharField(max_length=26, default='', null=True, blank=True, verbose_name='说明列表查看权限')
-    right_price = models.CharField(max_length=26, default='', null=True, blank=True, verbose_name='价格列表查看权限')
-    right_top = models.CharField(max_length=26, default='', null=True, blank=True, verbose_name='top列表查看权限')
-    right_backup = models.CharField(max_length=26, default='', null=True, blank=True, verbose_name='盘点列表查看权限')
-    right_task = models.CharField(max_length=26, default='', null=True, blank=True, verbose_name='微信任务推送权限')
-    right_operate = models.CharField(max_length=26, default='', null=True, blank=True, verbose_name='一些特殊操作权限')
 
     class Meta:
         verbose_name = '用户信息'
@@ -76,9 +69,7 @@ class MyLog(models.Model):
                                        verbose_name='操作时间')  # default=timezone.now,
     user = models.ForeignKey(settings.AUTH_USER_MODEL, models.CASCADE, verbose_name="操作人", default=-1)
     category = models.IntegerField(
-        choices=[(0, '其他'), (1, '用户'), (2, '会员'), (3, '券'), (4, '门店'), (5, '中心'), (6, '配送中心'), (7, 'O2O'), (8, '订单'),
-                 (61, '信息'), (62, '销售'), (63, '核价'), (64, 'TOP'), (65, '盘点'), (66, '特殊操作'), (50, '邮件发送')],
-        verbose_name="内容类别")
+        choices=[(0, '其他'), (1, '用户'), (2, '会员'), (3, '特殊操作'), (4, '邮件发送')], verbose_name="内容类别")
     action_flag = models.IntegerField(
         choices=[(0, '其他'), (1, '添加'), (2, '修改'), (3, '删除'), (4, '查询'), (5, '登录'), (6, '登出'), (7, '任务计划')],
         verbose_name="操作类型")
