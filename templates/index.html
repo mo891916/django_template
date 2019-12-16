@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>查 询 系 统</title>
+<meta name="author" content="DeathGhost" />
+<link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+<style>
+body{height:100%;background:#e0edff;overflow:hidden;}
+canvas{z-index:-1;position:absolute;}
+</style>
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/verificationNumbers.js"></script>
+<script src="/static/js/Particleground.js"></script>
+<script>
+$(document).ready(function() {
+  //粒子背景特效
+  $('body').particleground({
+    dotColor: '#3592f9',
+    lineColor: '#9FC6F9'
+  });
+  //验证码
+  createCode();
+  //测试提交，对接程序删除即可
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>
