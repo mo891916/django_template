@@ -83,6 +83,3 @@ class MyLog(models.Model):
     class Meta:
         verbose_name = '操作日志'
         verbose_name_plural = '用户操作日志'
-
-    # def save(self, *args, **kwargs):
-    #     return
