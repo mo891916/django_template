@@ -1,5 +1,5 @@
 buildozer==0.34
-certifi==2018.1.18
+certifi==2022.12.7
 diff-match-patch==20121119
 Django>1.11.12
 django-crispy-forms==1.7.2
